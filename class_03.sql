@@ -1,7 +1,7 @@
 -- userTBL, buyTBL 만들기
 
 
-use shopdb;
+use showdb;
 
 -- 고객 테이블 생성
 create table userTBL(

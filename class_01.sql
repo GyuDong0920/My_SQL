@@ -12,7 +12,7 @@ create database shopdb_1;
 /**
 create table 테이블명(
 	필드명 필드타입, 
-    필드명 필드타입, 
+    필드명 필드타입, 		
     primary key(필드면) 
 );
 */

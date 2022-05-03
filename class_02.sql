@@ -16,7 +16,7 @@ select * from memberTbl;
 
 -- 한건에 대한 데이터 조회는 어떻게 할까? -- where 절이라는 것을 사용하면 된다.
 select * from memberTbl where memberId = 'jee';
-
+		
 -- 한건에 대한 조회 + 조건절
 select memberName
 from memberTbl
