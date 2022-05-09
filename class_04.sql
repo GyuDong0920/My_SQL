@@ -1,7 +1,7 @@
 use showdb;
 
 select * from usertbl;
-select * from buytbl;
+select * from buytbl;	
 
 -- inner join
 select *
