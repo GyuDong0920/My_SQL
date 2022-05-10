@@ -80,7 +80,8 @@ select *,(select s.salary
 				from salaries as s
 					where e.emp_no = s.emp_no
                      group by emp_no) as salary
-from employees as e;
+from employees as e
+limit 20;
 
 -- 문제 4
 -- 중첩 직급이 senior engineer 인 직원의 정보만 출력하기

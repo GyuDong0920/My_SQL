@@ -126,13 +126,17 @@ select *
 from dept_manager
 where to_date <> '9999-01-01';
 
--- 2000년도 이전에 입사한사람들의 성별, 최저연봉과 최대 연봉을 구하시오
-select e.emp_no , e.gender as 성별 , min(salary) as 최저연봉 , max(salary) as 최대연봉 , s.to_date as 입사일
-from employees as e 
-inner join salaries as s
-on e.emp_no = s.emp_no
+-- 2000년도 이전에 입사한사람들의 성별, 최저연봉과 최대 연봉을 구하고 평균연봉을 소수점 한자리까지구하고 연봉변경 횟수를 작성하시오
+select e.emp_no, e.gender as 성별 , b.to_date as 입사일, b.count, b.max, b.min, b.avg_s, b.to_date
+from employees as e ,
+	(select emp_no, count(emp_no) as count , max(salary) as max, min(salary) as min, round(avg(salary), 1) as avg_s , to_date
+	from salaries
+	group by emp_no) as b
+where e.emp_no = b.emp_no
+and b.to_date <= '2000-01-01'
 group by emp_no 
-having to_date <= '2000-01-01'
+
+
 
 
 
